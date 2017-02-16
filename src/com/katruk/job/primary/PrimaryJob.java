@@ -1,13 +1,13 @@
-package com.katruk.job.main;
+package com.katruk.job.primary;
 
 import com.katruk.job.Job;
 
-public class MainJob implements Job {
+public class PrimaryJob implements Job {
 
   private final Job standardJob;
   private final String company;
 
-  public MainJob(Job job, String company) {
+  public PrimaryJob(Job job, String company) {
     this.standardJob = job;
     this.company = company;
   }

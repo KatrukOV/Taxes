@@ -1,12 +1,12 @@
-package com.katruk.job.additional;
+package com.katruk.job.secondary;
 
 import com.katruk.job.Job;
 
-public class AdditionalJob implements Job {
+public class SecondaryJob implements Job {
 
   private final Job standardJob;
 
-  public AdditionalJob(Job job) {
+  public SecondaryJob(Job job) {
     this.standardJob = job;
   }
 

@@ -2,8 +2,8 @@ package com.katruk;
 
 import com.katruk.job.StandardJob;
 import com.katruk.job.TaxJob;
-import com.katruk.job.additional.AdditionalJob;
-import com.katruk.job.main.MainJob;
+import com.katruk.job.primary.PrimaryJob;
+import com.katruk.job.secondary.SecondaryJob;
 import com.katruk.property.PropertySale;
 import com.katruk.property.TaxPropertySale;
 import com.katruk.royalty.RoyaltySimply;
@@ -15,8 +15,8 @@ public class Main {
 
   public static void main(String[] args) {
     Taxes taxes = new IndividualTaxes()
-        .with(new TaxJob(new MainJob(new StandardJob(5_000_00, "Lead"), "IBM")))
-        .with(new TaxJob(new AdditionalJob(new StandardJob(2_000_00, "PM"))))
+        .with(new TaxJob(new PrimaryJob(new StandardJob(120_000_00, "Lead"), "IBM")))
+        .with(new TaxJob(new SecondaryJob(new StandardJob(90_000_00, "PM"))))
         .with(new TaxRoyalty(new RoyaltySimply(10_000_00, "My book")))
         .with(new TaxPropertySale(new PropertySale("Flat 4 room", 300_000_00)))
         .with(new TaxPropertySale(new PropertySale("Country house", 250_000_00)));
