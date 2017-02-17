@@ -27,4 +27,5 @@ public class PropertySaleAPI implements Property {
     System.out.println("input name:");
     return this.reader.readLine();
   }
+
 }
