@@ -38,7 +38,6 @@ public class IndividualTaxes implements Taxes {
         .map(Tax::purposeOfPayment)
         .collect(Collectors.toCollection(ArrayList::new));
   }
-//
 //  public Collection<String> purposeOfPayments(Comparator comparator) {
 //    return this.taxes.stream().map(Tax::purposeOfPayment)
 //        .collect(Collectors.toCollection(ArrayList::new));
