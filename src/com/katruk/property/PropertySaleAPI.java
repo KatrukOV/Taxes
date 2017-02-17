@@ -1,31 +1,31 @@
 package com.katruk.property;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class PropertySaleAPI implements Property {
 
-  private final BufferedReader reader;
+  private final Text text;
 
   public PropertySaleAPI() {
-    this(new BufferedReader(new InputStreamReader(System.in)));
+    this(new ConsoleText());
   }
 
-  public PropertySaleAPI(BufferedReader reader) {
-    this.reader = reader;
+  public PropertySaleAPI(Text text) {
+    this.text = text;
   }
+
 
   @Override
   public long cost() throws IOException {
+    // remove to front
     System.out.println("input cost:");
-    return Long.parseLong(this.reader.readLine());
+    return Long.parseLong(this.text.context());
   }
 
   @Override
   public String name() throws IOException {
+    // remove to front
     System.out.println("input name:");
-    return this.reader.readLine();
+    return this.text.context();
   }
-
 }

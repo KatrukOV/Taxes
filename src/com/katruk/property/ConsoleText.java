@@ -7,22 +7,22 @@ import java.io.InputStream;
 public class ConsoleText implements Text {
 
   private final InputStream inputStream;
-  private final String encoding;
+  private final Encoding encoding;
 
 
   public ConsoleText() {
-    this(System.in, "UTF-8");
+    this(System.in, Encoding.UTF8);
   }
 
-  public ConsoleText(String encoding) {
+  public ConsoleText(Encoding encoding) {
     this(System.in, encoding);
   }
 
   public ConsoleText(InputStream inputStream) {
-    this(inputStream, "UTF-8");
+    this(inputStream, Encoding.UTF8);
   }
 
-  public ConsoleText(InputStream inputStream, String encoding) {
+  public ConsoleText(InputStream inputStream, Encoding encoding) {
     this.inputStream = inputStream;
     this.encoding = encoding;
   }
@@ -35,7 +35,7 @@ public class ConsoleText implements Text {
       while ((length = this.inputStream.read(buffer)) != -1) {
         result.write(buffer, 0, length);
       }
-      return result.toString(this.encoding);
+      return result.toString(this.encoding.toString());
     }
   }
 }
