@@ -12,7 +12,7 @@ public class TaxJob implements Tax {
 
   @Override
   public long calculate() {
-    return this.job.salary() * TAX_RATE / 100;
+    return this.job.salary() * TAX_RATE;
   }
 
   @Override

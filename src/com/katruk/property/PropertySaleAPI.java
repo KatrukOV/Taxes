@@ -16,27 +16,18 @@ public class PropertySaleAPI implements Property {
 
 
   @Override
-  public long cost() {
+  public long cost() throws IOException {
     // remove to front
     System.out.println("input cost in cent:");
-    try {
       return Long.parseLong(this.text.context());
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-    return 0;
+
   }
 
   @Override
-  public String name() {
+  public String name() throws IOException {
     // remove to front
     System.out.println("input name:");
-    try {
       return this.text.context();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-    return "";
   }
 
 }

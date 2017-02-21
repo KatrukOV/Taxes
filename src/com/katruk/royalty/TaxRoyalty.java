@@ -12,7 +12,7 @@ public class TaxRoyalty implements Tax {
 
   @Override
   public long calculate() {
-    return this.royalty.cost() * ROYALTY_RATE / 100;
+    return this.royalty.cost() * ROYALTY_RATE;
   }
 
   @Override

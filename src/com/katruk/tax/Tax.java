@@ -1,5 +1,7 @@
 package com.katruk.tax;
 
+import java.io.IOException;
+
 public interface Tax {
 
   long TAX_RATE = 17;
@@ -7,7 +9,7 @@ public interface Tax {
   long PROPERTY_SALE_RATE = 2;
 
   //in cent
-  long calculate();
+  long calculate() throws IOException;
 
-  String purposeOfPayment();
+  String purposeOfPayment() throws IOException;
 }

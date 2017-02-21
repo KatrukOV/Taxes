@@ -2,6 +2,8 @@ package com.katruk.property;
 
 import com.katruk.tax.Tax;
 
+import java.io.IOException;
+
 public class TaxPropertySale implements Tax {
 
   private final Property property;
@@ -12,16 +14,12 @@ public class TaxPropertySale implements Tax {
 
 
   @Override
-  public long calculate() {
-    long cost = 0;
-
-    cost = this.property.cost() * PROPERTY_SALE_RATE / 100;
-
-    return cost;
+  public long calculate() throws IOException {
+    return this.property.cost() * PROPERTY_SALE_RATE;
   }
 
   @Override
-  public String purposeOfPayment() {
+  public String purposeOfPayment() throws IOException {
     return String.format("Property: '%s' with cost = %d $.",
                          this.property.name(),
                          this.property.cost() / 100
