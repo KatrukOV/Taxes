@@ -1,8 +1,9 @@
 package com.katruk.property;
 
-import java.io.ByteArrayOutputStream;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class ConsoleText implements Text {
 
@@ -29,6 +30,17 @@ public class ConsoleText implements Text {
 
   @Override
   public String context() throws IOException {
+//    try (
+    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(this.inputStream));
+//    ) {
+    return bufferedReader.readLine();
+//    }
+  }
+}
+
+/*
+@Override
+  public String context() throws IOException {
     try (ByteArrayOutputStream result = new ByteArrayOutputStream()) {
       byte[] buffer = new byte[1024];
       int length;
@@ -38,4 +50,4 @@ public class ConsoleText implements Text {
       return result.toString(this.encoding.toString());
     }
   }
-}
+ */

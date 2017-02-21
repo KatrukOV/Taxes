@@ -13,7 +13,11 @@ public class TaxPropertySale implements Tax {
 
   @Override
   public long calculate() {
-    return this.property.cost() * PROPERTY_SALE_RATE / 100;
+    long cost = 0;
+
+    cost = this.property.cost() * PROPERTY_SALE_RATE / 100;
+
+    return cost;
   }
 
   @Override

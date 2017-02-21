@@ -1,11 +1,9 @@
 package com.katruk.property;
 
-import java.io.IOException;
-
 public interface Property {
 
-  long cost() throws IOException;
+  long cost();
 
-  String name() throws IOException;
+  String name();
 
 }

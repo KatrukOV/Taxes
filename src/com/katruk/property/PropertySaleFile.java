@@ -1,7 +1,6 @@
 package com.katruk.property;
 
 import java.io.File;
-import java.io.IOException;
 
 public class PropertySaleFile implements Property {
 
@@ -18,16 +17,21 @@ public class PropertySaleFile implements Property {
   }
 
   @Override
-  public long cost() throws IOException {
-    final long cost = this.property.cost();
+  public long cost() {
+    final long cost;
+
+    cost = this.property.cost();
 
     //save cost to file
     return cost;
   }
 
   @Override
-  public String name() throws IOException {
-    final String name = this.property.name();
+  public String name() {
+    final String name;
+
+    name = this.property.name();
+
     //save name to file
     return name;
   }
