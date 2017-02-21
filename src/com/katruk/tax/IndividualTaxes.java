@@ -1,10 +1,12 @@
 package com.katruk.tax;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
-import java.util.TreeSet;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class IndividualTaxes implements Taxes {
 
@@ -32,7 +34,7 @@ public class IndividualTaxes implements Taxes {
 
   @Override
   public Collection<String> purposeOfPayments() throws IOException {
-    Collection<String> purposes = new HashSet<>();
+    Collection<String> purposes = new ArrayList<>();
     for (Tax tax : this.taxes) {
       purposes.add(tax.purposeOfPayment());
     }
@@ -42,22 +44,25 @@ public class IndividualTaxes implements Taxes {
   }
 
   @Override
-  public Collection<String> purposeOfPayments(Comparator comparator) throws IOException {
-    Collection<String> purposes = new TreeSet<>();
-    for (Tax tax : this.taxes) {
+  public Collection<String> purposeOfPayments(Comparator<Tax> comparator) throws IOException {
+
+    ArrayList<String> purposes = new ArrayList<>();
+
+    List<Tax> list = this.taxes.stream().sorted(comparator)
+        .collect(Collectors.toCollection(ArrayList::new));
+    for (Tax tax : list) {
       purposes.add(tax.purposeOfPayment());
     }
-
-//    Collections.sort(purposes, comparator);
-
     return purposes;
 
 //    return this.taxes.stream().sorted((t1, t2) -> compare(t1.calculate(), t2.calculate()))
 //        .map(Tax::purposeOfPayment)
 //        .collect(Collectors.toCollection(ArrayList::new));
   }
+
 //  public Collection<String> purposeOfPayments(Comparator comparator) {
-//    return this.taxes.stream().map(Tax::purposeOfPayment)
+//    return this.taxes.stream().sorted(comparator)
+//        .map(Tax::purposeOfPayment)
 //        .collect(Collectors.toCollection(ArrayList::new));
 //  }
 }
