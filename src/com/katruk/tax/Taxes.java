@@ -19,11 +19,12 @@ public interface Taxes {
     @Override
     public int compare(Tax o1, Tax o2) {
       try {
-        long diff = o1.calculate() - o2.calculate();
+        final long diff = o1.calculate() - o2.calculate();
         return diff < 0 ? -1 : diff > 0 ? 1 : 0;
       } catch (IOException e) {
         e.printStackTrace();
       }
+      //only when IOException (it's bad)
       return 0;
     }
   }

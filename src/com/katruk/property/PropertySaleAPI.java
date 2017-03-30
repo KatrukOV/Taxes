@@ -1,5 +1,8 @@
 package com.katruk.property;
 
+import com.katruk.text.ConsoleText;
+import com.katruk.text.Text;
+
 import java.io.IOException;
 
 public class PropertySaleAPI implements Property {

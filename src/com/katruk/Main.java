@@ -34,13 +34,16 @@ public class Main {
     System.out.println(String.format("count of taxes = %d ", taxes.count()));
     System.out.println(String.format("result of taxes = %d", taxes.calculateAll() / 100));
 
-//    System.out.println("==================================================================");
 
+    //===OR===//
+//
+//    System.out.println("==================================================================");
+//
 //    Taxes taxes1 = new IndividualTaxes()
 //        .with(new TaxPropertySale(new PropertySaleFile("property.json", new PropertySaleAPI())))
 //        .with(new TaxPropertySale(new PropertySaleFile("property.json", new PropertySaleAPI())))
 //        .with(new TaxPropertySale(new PropertySaleFile("property.json", new PropertySaleAPI())));
-
+//
 //    System.out.println("==================== ALL purpose of Payments =====================");
 //    taxes1.purposeOfPayments().forEach(System.out::println);
 //    System.out.println("==================================================================");
@@ -50,6 +53,5 @@ public class Main {
 //    System.out.println("==================================================================");
 //    System.out.println(String.format("count of taxes = %d ", taxes1.count()));
 //    System.out.println(String.format("result of taxes = %d $", taxes1.calculateAll() / 100));
-
   }
 }

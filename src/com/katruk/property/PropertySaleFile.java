@@ -36,8 +36,4 @@ public class PropertySaleFile implements Property {
     //save name to file
     return name;
   }
-
-
 }
-
-

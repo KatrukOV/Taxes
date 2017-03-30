@@ -1,4 +1,4 @@
-package com.katruk.property;
+package com.katruk.text;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -30,11 +30,8 @@ public class ConsoleText implements Text {
 
   @Override
   public String context() throws IOException {
-//    try (
     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(this.inputStream));
-//    ) {
     return bufferedReader.readLine();
-//    }
   }
 }
 

@@ -1,4 +1,4 @@
-package com.katruk.property;
+package com.katruk.text;
 
 import java.io.IOException;
 
