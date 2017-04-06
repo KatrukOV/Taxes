@@ -35,7 +35,7 @@ public class Main {
     System.out.println(String.format("result of taxes = %d", taxes.calculateAll() / 100));
 
     //===OR===//
-//
+
 //    System.out.println("==================================================================");
 //
 //    Taxes taxes1 = new IndividualTaxes()
